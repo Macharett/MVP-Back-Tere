@@ -1,6 +1,6 @@
 from django.db import models
 
-# 1. Modelo de Parque (Unidade de Conservação)
+# 1. Modelo de Parque 
 
 class Parque(models.Model):
      
