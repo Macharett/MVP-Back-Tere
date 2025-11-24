@@ -38,7 +38,7 @@ class Parque(models.Model):
         return self.get_nome_display()
     
 
-# 2. Modelo de Trilha
+# 2. Modelo de Trilha.
 
 class Trilha(models.Model):
     """
@@ -92,3 +92,5 @@ class Trilha(models.Model):
     def __str__(self):
         status = "ABERTA" if self.status_aberta else "FECHADA"
         return f"{self.nome} ({status}) - {self.parque.get_nome_display()}"
+    
+
