@@ -93,7 +93,7 @@ class Trilha(models.Model):
         status = "ABERTA" if self.status_aberta else "FECHADA"
         return f"{self.nome} ({status}) - {self.parque.get_nome_display()}"
     
-    
+
 # 3. Modelo de Evento
 
 class Evento(models.Model):
@@ -136,3 +136,51 @@ class Evento(models.Model):
         return f"[{self.data_inicio.strftime('%d/%m/%Y')}] {self.titulo}"
 
 
+# 4. Modelo de Biodiversidade
+
+class Biodiversidade(models.Model):
+    """
+    Registro de espécies de fauna e flora presentes nas Unidades de Conservação.
+    """
+
+    parque = models.ForeignKey(
+        Parque,
+        on_delete=models.CASCADE,
+        related_name='biodiversidades'
+    )
+
+    nome_comum = models.CharField(
+        max_length=255,
+        verbose_name="Nome Comum"
+    )
+
+    nome_cientifico = models.CharField(
+        max_length=255,
+        verbose_name="Nome Científico",
+        help_text="Ex: Panthera onca, Ara chloropterus."
+    )
+
+    categoria = models.CharField(
+        max_length=100,
+        verbose_name="Categoria",
+        help_text="Ex: Fauna, Flora, Ave, Mamífero, Anfíbio, Árvore..."
+    )
+
+    status_conservacao = models.CharField(
+        max_length=150,
+        verbose_name="Status de Conservação",
+        help_text="Ex: Vulnerável, Em perigo, Criticamente ameaçada."
+    )
+
+    descricao = models.TextField(
+        verbose_name="Descrição Detalhada",
+        help_text="Características, habitat, comportamento, relevância para o parque..."
+    )
+
+    class Meta:
+        verbose_name = "Registro de Biodiversidade"
+        verbose_name_plural = "Biodiversidade"
+        ordering = ['nome_comum']
+
+    def __str__(self):
+        return f"{self.nome_comum} ({self.nome_cientifico})"
