@@ -93,4 +93,46 @@ class Trilha(models.Model):
         status = "ABERTA" if self.status_aberta else "FECHADA"
         return f"{self.nome} ({status}) - {self.parque.get_nome_display()}"
     
+    
+# 3. Modelo de Evento
+
+class Evento(models.Model):
+    """
+    Eventos, novidades ou avisos que ocorrem nas Unidades de Conservação.
+    """
+    
+    parque = models.ForeignKey(
+        Parque, 
+        on_delete=models.CASCADE, 
+        related_name='eventos'
+    )
+    titulo = models.CharField(
+        max_length=255, 
+        verbose_name="Título do Evento/Novidade"
+    )
+    descricao = models.TextField(
+        verbose_name="Descrição Detalhada"
+    )
+    data_inicio = models.DateTimeField(
+        verbose_name="Data e Hora de Início"
+    )
+    data_fim = models.DateTimeField(
+        null=True, 
+        blank=True, 
+        verbose_name="Data e Hora de Fim (opcional)"
+    )
+    disponibilidade = models.CharField(
+        max_length=255, 
+        verbose_name="Detalhes de Disponibilidade/Vagas",
+        help_text="Ex: 'Livre', 'Vagas limitadas', 'Inscrições abertas'."
+    )
+    
+    class Meta:
+        verbose_name = "Evento/Novidade"
+        verbose_name_plural = "Eventos e Novidades"
+        ordering = ['data_inicio']
+
+    def __str__(self):
+        return f"[{self.data_inicio.strftime('%d/%m/%Y')}] {self.titulo}"
+
 
