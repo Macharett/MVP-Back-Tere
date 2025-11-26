@@ -53,7 +53,7 @@ class EventoSerializer(serializers.ModelSerializer):
             'disponibilidade'
         )
 
-class biodiversidadeSerializer(serializers.ModelSerializer):
+class BiodiversidadeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Biodiversidade
         fields = (
