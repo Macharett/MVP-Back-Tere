@@ -4,7 +4,7 @@ from .models import Parque, Trilha, Evento, Biodiversidade
 class ParqueSerializer(serializers.ModelSerializer):
     trilhas = TrilhaSerializer(many=True, read_only=True)
     eventos = EventoSerializer(many=True, read_only=True)
-    
+
     nome_display = serializers.CharField(source='get_nome_display')
 
     class Meta:
@@ -51,4 +51,17 @@ class EventoSerializer(serializers.ModelSerializer):
             'data_inicio', 
             'data_fim', 
             'disponibilidade'
+        )
+
+class biodiversidadeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Biodiversidade
+        fields = (
+            'id', 
+            'parque', 
+            'nome_comum', 
+            'nome_cientifico', 
+            'categoria', 
+            'status_conservacao'
+            'descricao'
         )
