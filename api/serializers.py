@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Parque
+from .models import Parque, Trilha, Evento, Biodiversidade
 
 class ParqueSerializer(serializers.ModelSerializer):
     
@@ -14,4 +14,6 @@ class ParqueSerializer(serializers.ModelSerializer):
             'descricao_geral', 
             'altitude_media', 
             'horario_funcionamento',
+            'trilhas',  
+            'eventos',
         )
