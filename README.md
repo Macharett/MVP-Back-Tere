@@ -1,4 +1,4 @@
-# MVP - Circuito Terê Verde
+# MVP - Back-End Development
 
 ## Equipe de Desenvolvimento
 - **Anderson Macharett Pedrozo Rocha**
@@ -12,4 +12,4 @@
 - ## Tecnologias utilizadas
 - **Python:**
 - **Django:**
-- **SQLite**
+- **SQLite:**
