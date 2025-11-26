@@ -17,3 +17,36 @@ class ParqueSerializer(serializers.ModelSerializer):
             'trilhas',  
             'eventos',
         )
+
+class TrilhaSerializer(serializers.ModelSerializer):
+    status_aberta_display = serializers.SerializerMethodField()
+    dificuldade_display = serializers.CharField(source='get_dificuldade_display')
+
+    class Meta:
+        model = Trilha
+        fields = (
+            'id', 
+            'nome', 
+            'descricao', 
+            'dificuldade',
+            'dificuldade_display', 
+            'distancia_km', 
+            'tempo_estimado_horas', 
+            'status_aberta',
+            'status_aberta_display', 
+        )
+
+    def get_status_aberta_display(self, obj):
+        return "Aberta" if obj.status_aberta else "Fechada"
+
+class EventoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Evento
+        fields = (
+            'id', 
+            'titulo', 
+            'descricao', 
+            'data_inicio', 
+            'data_fim', 
+            'disponibilidade'
+        )
