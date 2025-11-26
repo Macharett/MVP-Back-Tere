@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from django.db.models import Q
 from django.utils import timezone
-from .models import Parque
-from .serializers import ParqueSerializer
+from .models import Parque, Trilha, Evento, Biodiversidade
+from .serializers import ParqueSerializer, TrilhaSerializer, EventoSerializer, BiodiversidadeSerializer
 
 
 class ParqueViewSet(viewsets.ReadOnlyModelViewSet):
@@ -26,4 +26,7 @@ class EventoViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class BiodiversidadeViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = 
+    queryset = Biodiversidade.objects.all()
+    serializer_class = BiodiversidadeSerializer
+    filterset_fields = ['parque','categoria','status_conservacao']
+    ordering_fields = ['nome_comum']
