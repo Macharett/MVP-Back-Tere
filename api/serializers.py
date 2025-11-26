@@ -2,6 +2,8 @@ from rest_framework import serializers
 from .models import Parque, Trilha, Evento, Biodiversidade
 
 class ParqueSerializer(serializers.ModelSerializer):
+    trilhas = TrilhaSerializer(many=True, read_only=True)
+    eventos = EventoSerializer(many=True, read_only=True)
     
     nome_display = serializers.CharField(source='get_nome_display')
 
