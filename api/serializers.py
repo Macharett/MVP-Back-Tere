@@ -1,24 +1,6 @@
 from rest_framework import serializers
 from .models import Parque, Trilha, Evento, Biodiversidade
 
-class ParqueSerializer(serializers.ModelSerializer):
-    trilhas = TrilhaSerializer(many=True, read_only=True)
-    eventos = EventoSerializer(many=True, read_only=True)
-
-    nome_display = serializers.CharField(source='get_nome_display')
-
-    class Meta:
-        model = Parque
-        fields = (
-            'id', 
-            'nome', 
-            'nome_display',
-            'descricao_geral', 
-            'altitude_media', 
-            'horario_funcionamento',
-            'trilhas',  
-            'eventos',
-        )
 
 class TrilhaSerializer(serializers.ModelSerializer):
     status_aberta_display = serializers.SerializerMethodField()
@@ -51,6 +33,24 @@ class EventoSerializer(serializers.ModelSerializer):
             'data_inicio', 
             'data_fim', 
             'disponibilidade'
+        )
+class ParqueSerializer(serializers.ModelSerializer):
+    trilhas = TrilhaSerializer(many=True, read_only=True)
+    eventos = EventoSerializer(many=True, read_only=True)
+
+    nome_display = serializers.CharField(source='get_nome_display')
+
+    class Meta:
+        model = Parque
+        fields = (
+            'id', 
+            'nome', 
+            'nome_display',
+            'descricao_geral', 
+            'altitude_media', 
+            'horario_funcionamento',
+            'trilhas',  
+            'eventos',
         )
 
 class BiodiversidadeSerializer(serializers.ModelSerializer):
