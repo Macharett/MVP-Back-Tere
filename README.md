@@ -11,7 +11,7 @@
 
 - ## Tecnologias utilizadas
 - **Python:** Linguagem de programação
-- **Django:** Framework
+- **Django:** Framework Web
 - **Postgresql:** Banco de dados
 
  ## Tipo de MVP
