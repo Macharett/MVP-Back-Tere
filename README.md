@@ -12,7 +12,7 @@
 - ## Tecnologias utilizadas
 - **Python:** Linguagem de programação
 - **Django:** Framework
-- **SQLite:** Banco de dados
+- **Postgresql:** Banco de dados
 
  ## Tipo de MVP
 Optamos por um MVP de protótipo funcional xxxx
