@@ -6,7 +6,7 @@
 - **Glauber Carlos dos Santos Medeiros**
 - **Marcos Paulo Gomes Pagayme**
 
-- ## Projeto - Circuito Terê Verde
+# Projeto - Circuito Terê Verde
 - Plataforma para cadastro de Parques, Trilhas, Eventos e Biodiversidade na cidade de Teresópolis
 
 - ## Tecnologias utilizadas
