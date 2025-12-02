@@ -32,7 +32,7 @@ class EventoSerializer(serializers.ModelSerializer):
             'descricao', 
             'data_inicio', 
             'data_fim', 
-            'disponibilidade'
+            'disponibilidade',
         )
 class ParqueSerializer(serializers.ModelSerializer):
     trilhas = TrilhaSerializer(many=True, read_only=True)
@@ -62,6 +62,6 @@ class BiodiversidadeSerializer(serializers.ModelSerializer):
             'nome_comum', 
             'nome_cientifico', 
             'categoria', 
-            'status_conservacao'
-            'descricao'
+            'status_conservacao',
+            'descricao',
         )

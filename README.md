@@ -10,9 +10,11 @@
 - Plataforma para cadastro de Parques, Trilhas, Eventos e Biodiversidade na cidade de Teresópolis
 
 - ## Tecnologias utilizadas
+- **Visual Studio Code: Edição do código fonte**
 - **Python:** Linguagem de programação
 - **Django:** Framework Web
-- **Postgresql / Railway:** Banco de dados
+- **PostgreSQL / Railway:** Banco de dados
+- **GitHub: Hospedagem e versionamento do código**
 
  ## Tipo de MVP
 Optamos por um MVP de protótipo funcional xxxx
