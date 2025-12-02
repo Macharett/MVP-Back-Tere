@@ -1,0 +1,14 @@
+1º python -m venv venv
+2º venv\Scripts\activate
+SE O DE CIMA DEU ERRO COLOQUE O CÓDIGO ABAIXO E FAÇA NOVAMENTE O DE CIMA
+2ºA Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+
+3º pip install -r requirements.txt
+
+
+
+Após atualização do Classes ou Models.
+4º python manage.py makemigrations
+5º python manage.py migrate
+6º python manage.py runserver
