@@ -7,9 +7,9 @@
 - **Marcos Paulo Gomes Pagayme**
 
 # Projeto - Circuito Terê Verde
-- Plataforma para cadastro de Parques, Trilhas, Eventos e Biodiversidade na cidade de Teresópolis
+- Plataforma para cadastro e consulta de Parques, Trilhas, Eventos e Biodiversidade na cidade de Teresópolis
 
-- ## Tecnologias utilizadas
+ # Tecnologias utilizadas
 - **Visual Studio Code: Edição do código fonte**
 - **Python:** Linguagem de programação
 - **Django:** Framework Web
