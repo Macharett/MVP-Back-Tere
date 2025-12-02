@@ -23,4 +23,5 @@
  - Baixe o Asset "Source code (zip)".
  - Extraia a pasta MVP-Back-Tere
  - Na pasta MVP-Back-Tere, clique com o botão direito do mouse e vá na opção "Abrir no Terminal"
- - No terminal, execute os seguintes comandos "1º python -m venv venv. 2º venv\Scripts\activate. 3º pip install -r requirements.txt"
+ - No terminal, execute os seguintes comandos: "1º python -m venv venv. 2º venv\Scripts\activate. 3º pip install -r requirements.txt. 4º python manage.py runserver"
+ - Observação: O usuário deve ter o Python instalado no computador
