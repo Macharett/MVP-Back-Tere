@@ -20,7 +20,7 @@
 
  - Observação: O usuário deve ter o Python instalado no computador
  - Acesse o repositório https://github.com/Macharett/MVP-Back-Tere
- - Clique em Releases.
+ - Clique em Releases
  - Selecione a última versão disponível
  - Baixe o Asset "Source code (zip)"
  - Extraia a pasta MVP-Back-Tere
